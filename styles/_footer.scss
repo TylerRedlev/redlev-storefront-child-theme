@@ -1,0 +1,184 @@
+@import "variables";
+
+footer {
+  padding-top: 2rem;
+}
+
+#footerContainer {
+  //margin-bottom: 2rem;
+}
+
+footer div#footerContainer div#footerLogo img {
+  max-height: 30vh;
+  width: auto;
+}
+
+footer div#footerContainer nav ul {
+  list-style-type: none;
+  font-size: 1.4em;
+
+  a:link {
+    color: #ea0102;
+  }
+
+  a:visited {
+    color: #5e1914;
+  }
+
+  a:hover {
+    color: #ffffff;
+  }
+
+  a:active {
+    color: #000000;
+  }
+}
+
+footer div#footerContainer nav ul {
+  text-align: center;
+  font-size: 1.4em;
+}
+
+footer div#footerContainer ul#sggFooterAuxMenu {
+  @media only screen and (max-width: $breakpoint-medium) {
+    border-top: 1px solid #5e1914;
+  }
+}
+
+footer div#footerSocialColumn h4 {
+  letter-spacing: 1px;
+  margin-bottom: 0;
+}
+
+footer div#footerSocialColumn div#socialIconWrapper {
+  @media only screen and (max-width: $breakpoint-medium) {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .socialIconHalf {
+    width: 90%;
+    margin: 10px auto;
+    //padding: 10px 0 ;
+    display: flex;
+    justify-content: center;
+
+    a.facebookLink:before {
+      background: #3b5999;
+    }
+
+    a.twitterLink:before {
+      background: #55acee;
+    }
+
+    a.instaLink:before {
+      background: #e72868;
+    }
+
+    a.pinterestLink:before {
+      background: red;
+    }
+  }
+}
+
+footer
+  div#footerSocialColumn
+  div#socialIconWrapper
+  .socialIconHalf
+  div.socialIcon {
+  a {
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    text-align: center;
+    line-height: 80px;
+    font-size: 35px;
+    margin: 0 10px;
+    display: block;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    border: 3px solid #fff;
+    z-index: 1;
+
+    i {
+      position: relative;
+      color: #262626;
+      transition: 0.5s;
+      z-index: 3;
+      width: auto;
+      height: 60%;
+    }
+
+    img {
+      max-width: 60%;
+      height: auto;
+      margin: 0.5rem 0;
+      fill: green;
+
+      @media only screen and (max-width: $breakpoint-medium) {
+        max-width: 30%;
+      }
+
+      @media only screen and (max-width: $breakpoint-small) {
+        max-width: 40%;
+      }
+
+      &:hover {
+        transform: scale(1.3);
+        transition-duration: 0.5s;
+      }
+    }
+  }
+
+  a:hover i {
+    color: #fff;
+    transform: rotateY(360deg);
+  }
+
+  a.pinterestLink:hover i {
+    color: white;
+
+  }
+
+  a:before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    //background: #f00;
+    transition: 0.5s;
+    z-index: 2;
+  }
+
+  a:hover:before {
+    top: 0;
+  }
+}
+
+// footer div#footerSocialColumn div#socialIconWrapper div img:hover{
+//     transform: scale(1.3);
+//     transition-duration: 0.5s;
+// }
+
+.copyright {
+  background-color: #7f6600;
+  background-color: #ea0102;
+  padding: 0.5rem 0;
+  margin-top: 1rem;
+
+  p {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-weight: bold;
+    line-height: 1.6;
+    letter-spacing: 2px;
+    @media only screen and (max-width: $breakpoint-small) {
+      font-size: 0.8em;
+    }
+
+  }
+}

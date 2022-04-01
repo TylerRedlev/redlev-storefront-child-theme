@@ -159,4 +159,8 @@ footer div#footerSocialColumn div#socialIconWrapper .socialIconHalf div.socialIc
   }
 }
 
+.woocommerce-products-header {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */

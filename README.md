@@ -75,6 +75,6 @@ Additional plugins to use with the theme:
 
 Development Plugins:
 -Show current template Plugin
--show hooks
+-show hooks.
 
 

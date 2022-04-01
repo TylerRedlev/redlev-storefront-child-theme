@@ -182,4 +182,8 @@ add_action("customize_register", "redlev_storefront_wp_theme_load_wp_customizer"
 
 
 
+
+include 'includes/storefront-includes.php';
+
+
 ?>

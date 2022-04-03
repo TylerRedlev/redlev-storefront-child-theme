@@ -8,6 +8,90 @@ Template: storefront
 */
 /* --------------- Theme customization starts here ----------------- */
 /* FOOTER IMPORT */
+header div#SearchBar {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 10px;
+}
+@media only screen and (max-width: 425px) {
+  header div#SearchBar {
+    display: flex;
+    flex-direction: column;
+  }
+}
+header div#SearchBar div#searchBarInput {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+header div#SearchBar div#searchBarInput form {
+  margin: 10px 0;
+}
+header div#SearchBar div#searchBarInput form input {
+  border-radius: 5px;
+  max-width: 60%;
+}
+@media only screen and (min-width: 425px) {
+  header div#SearchBar div#searchBarInput form input {
+    max-width: 50%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  header div#SearchBar div#searchBarInput {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+}
+@media only screen and (max-width: 425px) {
+  header div#SearchBar div#searchBarInput {
+    display: flex;
+    order: 2;
+    justify-content: center;
+  }
+}
+header div#SearchBar div#searchBarImage {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  align-items: center;
+}
+@media only screen and (max-width: 425px) {
+  header div#SearchBar div#searchBarImage {
+    display: flex;
+    order: 1;
+    justify-content: center;
+  }
+}
+header div#SearchBar div#loginBar {
+  grid-column-start: 3;
+  grid-column-end: end;
+}
+@media only screen and (max-width: 425px) {
+  header div#SearchBar div#loginBar {
+    display: flex;
+    order: 3;
+    justify-content: center;
+  }
+}
+header div#SearchBar div#loginBar a.btn {
+  padding: 3px 2px;
+  width: 30%;
+  border-radius: 5px;
+  text-align: center;
+}
+
+div.storefront-primary-navigation nav#site-navigation {
+  margin: 0 auto;
+  float: none;
+}
+div.storefront-primary-navigation nav#site-navigation div.primary-navigation {
+  width: 100%;
+}
+div.storefront-primary-navigation nav#site-navigation div.primary-navigation ul {
+  display: flex;
+  justify-content: space-between;
+}
+
 footer {
   padding-top: 2rem;
 }
@@ -161,6 +245,10 @@ footer div#footerSocialColumn div#socialIconWrapper .socialIconHalf div.socialIc
 
 .woocommerce-products-header {
   display: none;
+}
+
+.storefront-sorting form.woocommerce-ordering {
+  float: right;
 }
 
 /*# sourceMappingURL=style.css.map */

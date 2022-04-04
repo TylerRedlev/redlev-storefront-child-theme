@@ -10,8 +10,9 @@ Template: storefront
 /* FOOTER IMPORT */
 header div#SearchBar {
   display: grid;
+  width: 90%;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin: 10px;
+  margin: 10px auto 20px;
 }
 @media only screen and (max-width: 425px) {
   header div#SearchBar {
@@ -22,26 +23,8 @@ header div#SearchBar {
 header div#SearchBar div#searchBarInput {
   grid-column-start: 1;
   grid-column-end: 2;
-}
-header div#SearchBar div#searchBarInput form {
-  margin: 10px 0;
-}
-header div#SearchBar div#searchBarInput form input {
-  border-radius: 5px;
-  max-width: 60%;
-}
-@media only screen and (min-width: 425px) {
-  header div#SearchBar div#searchBarInput form input {
-    max-width: 50%;
-  }
-}
-@media only screen and (max-width: 768px) {
-  header div#SearchBar div#searchBarInput {
-    grid-row-start: 2;
-    grid-row-end: 3;
-    grid-column-start: 1;
-    grid-column-end: 2;
-  }
+  display: flex;
+  justify-content: start;
 }
 @media only screen and (max-width: 425px) {
   header div#SearchBar div#searchBarInput {
@@ -50,10 +33,48 @@ header div#SearchBar div#searchBarInput form input {
     justify-content: center;
   }
 }
+header div#SearchBar div#searchBarInput form {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+@media only screen and (max-width: 425px) {
+  header div#SearchBar div#searchBarInput form {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 425px) {
+  header div#SearchBar div#searchBarInput form {
+    justify-content: start;
+  }
+}
+header div#SearchBar div#searchBarInput form input {
+  border-radius: 5px;
+  padding: 5px;
+  max-width: 90%;
+  margin-right: 10px;
+}
+@media only screen and (min-width: 425px) {
+  header div#SearchBar div#searchBarInput form input {
+    max-width: 50%;
+  }
+}
+@media only screen and (max-width: 425px) {
+  header div#SearchBar div#searchBarInput form input {
+    width: 70%;
+  }
+}
+header div#SearchBar div#searchBarInput form button {
+  padding: 5px;
+  border-radius: 3px;
+}
 header div#SearchBar div#searchBarImage {
   grid-column-start: 2;
   grid-column-end: 3;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  width: 100%;
 }
 @media only screen and (max-width: 425px) {
   header div#SearchBar div#searchBarImage {
@@ -62,9 +83,15 @@ header div#SearchBar div#searchBarImage {
     justify-content: center;
   }
 }
+header div#SearchBar div#searchBarImage a img {
+  width: 500px;
+  height: auto;
+}
 header div#SearchBar div#loginBar {
   grid-column-start: 3;
   grid-column-end: end;
+  display: flex;
+  justify-content: center;
 }
 @media only screen and (max-width: 425px) {
   header div#SearchBar div#loginBar {
@@ -74,10 +101,29 @@ header div#SearchBar div#loginBar {
   }
 }
 header div#SearchBar div#loginBar a.btn {
-  padding: 3px 2px;
+  padding: 3px 6px;
   width: 30%;
   border-radius: 5px;
   text-align: center;
+  align-self: center;
+}
+@media only screen and (max-width: 425px) {
+  header div#SearchBar div#loginBar a.btn {
+    font-size: 0.8em;
+    width: 45%;
+  }
+}
+@media only screen and (min-width: 425px) {
+  header div#SearchBar div#loginBar a.btn {
+    width: 30%;
+    font-size: 0.7em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  header div#SearchBar div#loginBar a.btn {
+    width: auto;
+    font-size: 0.9em;
+  }
 }
 
 div.storefront-primary-navigation nav#site-navigation {
@@ -96,6 +142,24 @@ footer {
   padding-top: 2rem;
 }
 
+#footerContainer {
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  max-width: 90%;
+}
+@media only screen and (max-width: 768px) {
+  #footerContainer {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
+}
+
+footer div#footerContainer div#footerLogo {
+  grid-column: 1/2;
+}
 footer div#footerContainer div#footerLogo img {
   max-height: 30vh;
   width: auto;
@@ -104,6 +168,7 @@ footer div#footerContainer div#footerLogo img {
 footer div#footerContainer nav ul {
   list-style-type: none;
   font-size: 1.4em;
+  text-align: center;
 }
 footer div#footerContainer nav ul a:link {
   color: #ea0102;
@@ -118,20 +183,30 @@ footer div#footerContainer nav ul a:active {
   color: #000000;
 }
 
-footer div#footerContainer nav ul {
-  text-align: center;
-  font-size: 1.4em;
+footer div#footerContainer #sggFooterMenuWrapper {
+  grid-column: 2/3;
+}
+footer div#footerContainer #sggFooterMenuWrapper ul {
+  margin: 10px auto;
 }
 
+footer div#footerContainer div#sggFooterAuxMenu {
+  grid-column: 3/4;
+}
+footer div#footerContainer div#sggFooterAuxMenu ul {
+  margin: 10px auto;
+}
 @media only screen and (max-width: 768px) {
-  footer div#footerContainer ul#sggFooterAuxMenu {
+  footer div#footerContainer div#sggFooterAuxMenu {
     border-top: 1px solid #5e1914;
   }
 }
 
-footer div#footerSocialColumn h4 {
+footer div#footerSocialColumn h5 {
   letter-spacing: 1px;
   margin-bottom: 0;
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 768px) {
@@ -230,6 +305,7 @@ footer div#footerSocialColumn div#socialIconWrapper .socialIconHalf div.socialIc
   margin-top: 1rem;
 }
 .copyright p {
+  text-align: center;
   margin: 0;
   padding: 0;
   color: white;
@@ -249,6 +325,27 @@ footer div#footerSocialColumn div#socialIconWrapper .socialIconHalf div.socialIc
 
 .storefront-sorting form.woocommerce-ordering {
   float: right;
+}
+
+article.page.type-page h1, article.post.type-post h1 {
+  font-size: 3.12em;
+  color: black;
+}
+article.page.type-page h2, article.post.type-post h2 {
+  font-size: 2.6em;
+}
+article.page.type-page h3, article.post.type-post h3 {
+  font-size: 2.16em;
+}
+article.page.type-page h4, article.post.type-post h4 {
+  font-size: 1.8em;
+}
+article.page.type-page h5, article.post.type-post h5 {
+  font-size: 1.5em;
+}
+article.page.type-page p, article.post.type-post p {
+  font-size: 1.2em;
+  color: black;
 }
 
 /*# sourceMappingURL=style.css.map */

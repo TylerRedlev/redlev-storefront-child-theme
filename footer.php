@@ -16,7 +16,7 @@
 	<?php do_action( 'storefront_before_footer' ); ?>
 
 <footer style="background-color: #ffcc00;">
-    <div class="container-content container row mx-auto" id="footerContainer">
+    <div class="col-full" id="footerContainer">
 
 
 
@@ -26,7 +26,7 @@
     ==================================== 
 -->
 
-        <div class="col-lg-3 col-md-6 my-2 col-sm-12 d-flex justify-content-center" id="footerLogo">
+        <div class="" id="footerLogo">
             <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri();  ?>/assets/images/png/SGG-Type-and-Logo-Transparent-840x660.png" alt=""></a>
         </div>
 
@@ -36,7 +36,7 @@
     ==================================== 
 -->
 
-        <div id="sggFooterMenuWrapper" class="col-lg-3 col-md-6 col-sm-12 justify-content-center mt-2">
+        <div id="sggFooterMenuWrapper" class="">
             <nav>
                 <?php wp_nav_menu(array(
                     "theme_location" => "sgg_wp_footer_menu_id",
@@ -49,7 +49,7 @@
             </nav>
         </div>
 
-        <div class="col-lg-3 col-md-6 col-sm-12 mt-2 justify-content-center">
+        <div id="sggFooterAuxMenu">
             <nav>
                 <?php wp_nav_menu(array(
                     "theme_location" => "sgg_wp_aux_footer_menu_id",
@@ -71,7 +71,7 @@
     ==================================== 
 -->
 
-        <div id="footerSocialColumn" class="col-lg-3 col-md-6 col-sm-12 mt-2 text-center">
+        <div id="footerSocialColumn" class="">
             <h5>
                 &#128241;Follow us in social media&#128241;
             </h5>

@@ -4,9 +4,9 @@
 
 header div#SearchBar {
   display: grid;
-  //max-width: 75%;
+  width: 90%;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin: 10px;
+  margin: 10px auto 20px;
 
   @media only screen and (max-width: 425px) {
     display: flex;
@@ -16,56 +16,88 @@ header div#SearchBar {
   div#searchBarInput {
     grid-column-start: 1;
     grid-column-end: 2;
-    //display: flex;
-    //justify-content: start;
+    display: flex;
+    justify-content: start;
     //flex-wrap: wrap;
-    //width: 100%;
-
-    form {
-      margin: 10px 0;
-      input {
-        border-radius: 5px;
-        max-width: 60%;
-        @media only screen and (min-width: 425px) {
-          max-width: 50%;
-        }
-      }
-    }
-
-    @media only screen and (max-width: 768px) {
-      grid-row-start: 2;
-      grid-row-end: 3;
-      grid-column-start: 1;
-      grid-column-end: 2;
-    }
 
     @media only screen and (max-width: 425px) {
       display: flex;
       order: 2;
       justify-content: center;
+      //width: 100%;
     }
+
+    form {
+      display: flex;
+      justify-content: center;
+      margin: 10px 0;
+      
+      @media only screen and (max-width: 425px) {
+        width: 100%;
+      }
+
+      @media only screen and (min-width: 425px) {
+        justify-content: start;
+      }
+
+      input {
+        border-radius: 5px;
+        padding: 5px;
+        max-width: 90%;
+        margin-right: 10px;
+        @media only screen and (min-width: 425px) {
+          max-width: 50%;
+        }
+
+        @media only screen and (max-width: 425px) {
+          width: 70%;
+        }
+      }
+      button {
+        padding: 5px;
+        border-radius: 3px;
+      }
+    }
+
+    // @media only screen and (max-width: 768px) {
+    //   grid-row-start: 2;
+    //   grid-row-end: 3;
+    //   grid-column-start: 1;
+    //   grid-column-end: 2;
+    // }
   }
 
   div#searchBarImage {
     grid-column-start: 2;
     grid-column-end: 3;
-    //display: flex;
-    //justify-content: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    width: 100%;
 
     @media only screen and (max-width: 425px) {
       display: flex;
       order: 1;
       justify-content: center;
     }
+
+    a {
+      img {
+        width: 500px;
+        height: auto;
+
+        @media only screen and (max-width: 425px) {
+          //width: 90%;
+        }
+      }
+    }
   }
 
   div#loginBar {
     grid-column-start: 3;
     grid-column-end: end;
-    //display: flex;
-    //justify-content: end;
-    //width: 100%;
+    display: flex;
+    justify-content: center;
 
     @media only screen and (max-width: 425px) {
       display: flex;
@@ -74,10 +106,25 @@ header div#SearchBar {
     }
 
     a.btn {
-      padding: 3px 2px;
+      padding: 3px 6px;
       width: 30%;
       border-radius: 5px;
       text-align: center;
+      align-self: center;
+
+      @media only screen and (max-width: 425px) {
+        font-size: 0.8em;
+        width: 45%;
+      }
+
+      @media only screen and (min-width: 425px) {
+        width: 30%;
+        font-size: 0.7em;
+      }
+      @media only screen and (min-width: 768px) {
+        width: auto;
+        font-size: 0.9em;
+      }
     }
   }
 }

@@ -4,18 +4,47 @@ footer {
   padding-top: 2rem;
 }
 
+// ====================
+// FOOTER CONTAINER
+// ====================
+
 #footerContainer {
   //margin-bottom: 2rem;
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  max-width: 90%;
+
+
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+  }
 }
 
-footer div#footerContainer div#footerLogo img {
-  max-height: 30vh;
-  width: auto;
+
+// ==========
+// FOOTER LOGO
+// ========
+
+footer div#footerContainer div#footerLogo {
+  grid-column: 1 /2;
+
+  img {
+    max-height: 30vh;
+    width: auto;
+  }
 }
 
+// =================
+// FOOTER UL STYLES
+// ================
 footer div#footerContainer nav ul {
   list-style-type: none;
   font-size: 1.4em;
+  text-align: center;
 
   a:link {
     color: #ea0102;
@@ -34,23 +63,34 @@ footer div#footerContainer nav ul {
   }
 }
 
-footer div#footerContainer nav ul {
-  text-align: center;
-  font-size: 1.4em;
+footer div#footerContainer #sggFooterMenuWrapper {
+  grid-column: 2 /3;
+  ul {
+    margin: 10px auto;
+  }
+
 }
 
-footer div#footerContainer ul#sggFooterAuxMenu {
+footer div#footerContainer div#sggFooterAuxMenu {
+
+  grid-column: 3 /4;
+  ul {
+    margin: 10px auto;
+  }
   @media only screen and (max-width: $breakpoint-medium) {
     border-top: 1px solid #5e1914;
   }
 }
 
-footer div#footerSocialColumn h4 {
+footer div#footerSocialColumn h5 {
   letter-spacing: 1px;
   margin-bottom: 0;
+  display: flex;
+  justify-content: center;
 }
 
 footer div#footerSocialColumn div#socialIconWrapper {
+  
   @media only screen and (max-width: $breakpoint-medium) {
     width: 80%;
     margin: 0 auto;
@@ -138,7 +178,6 @@ footer
 
   a.pinterestLink:hover i {
     color: white;
-
   }
 
   a:before {
@@ -170,6 +209,7 @@ footer
   margin-top: 1rem;
 
   p {
+    text-align: center;
     margin: 0;
     padding: 0;
     color: white;
@@ -179,6 +219,5 @@ footer
     @media only screen and (max-width: $breakpoint-small) {
       font-size: 0.8em;
     }
-
   }
 }

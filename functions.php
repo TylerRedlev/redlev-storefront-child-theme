@@ -77,6 +77,10 @@ function redlev_storefront_wp_theme_add_anchor_links($classes, $item, $args){
 add_filter("nav_menu_link_attributes", "redlev_storefront_wp_theme_add_anchor_links", 1, 3);
 
 
+// =======================
+// CUSTOMIZER
+// =======================
+
 function redlev_storefront_wp_theme_load_wp_customizer($wp_customize) {
     /// customizer code
 
@@ -181,6 +185,7 @@ add_action("customize_register", "redlev_storefront_wp_theme_load_wp_customizer"
 
 
 
+include 'includes/wc-modifications.php';
 
 
 include 'includes/storefront-includes.php';

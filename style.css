@@ -43,7 +43,7 @@ header div#SearchBar div#searchBarInput form {
     width: 100%;
   }
 }
-@media only screen and (min-width: 425px) {
+@media only screen and (min-width: 768px) {
   header div#SearchBar div#searchBarInput form {
     justify-content: start;
   }
@@ -92,6 +92,7 @@ header div#SearchBar div#loginBar {
   grid-column-end: end;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 @media only screen and (max-width: 425px) {
   header div#SearchBar div#loginBar {
@@ -327,25 +328,135 @@ footer div#footerSocialColumn div#socialIconWrapper .socialIconHalf div.socialIc
   float: right;
 }
 
-article.page.type-page h1, article.post.type-post h1 {
+ul.products li.product {
+  position: relative;
+  margin-bottom: 7em;
+}
+@media only screen and (max-width: 425px) {
+  ul.products li.product {
+    margin-bottom: 11em;
+  }
+}
+ul.products li.product h2.woocommerce-loop-product__title {
+  font-size: 1.5em;
+  font-family: "Oswald", sans-serif;
+}
+@media only screen and (max-width: 768px) {
+  ul.products li.product h2.woocommerce-loop-product__title {
+    font-size: 1.2em;
+  }
+}
+ul.products li.product img.attachment-woocommerce_thumbnail.size-woocommerce_thumbnail {
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 425px) {
+  ul.products li.product img.attachment-woocommerce_thumbnail.size-woocommerce_thumbnail {
+    width: 100%;
+  }
+}
+ul.products li.product span.price {
+  font-size: 1.3em;
+  font-family: "Oswald", sans-serif;
+  position: absolute;
+  left: 0;
+}
+@media only screen and (max-width: 768px) {
+  ul.products li.product span.price {
+    width: auto;
+    font-size: 1em;
+  }
+}
+ul.products li.product a.button {
+  position: absolute;
+  right: 0;
+  background: linear-gradient(to bottom, #faab37 0, #f9a11e 100%);
+  color: white;
+  line-height: 1.1;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  padding: 10px 11px;
+  border-radius: 2px;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+  font-size: 1em;
+  font-weight: bold;
+}
+@media only screen and (max-width: 425px) {
+  ul.products li.product a.button {
+    font-size: 0.7em;
+    padding: 8px 9px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  ul.products li.product a.button {
+    width: auto;
+    font-size: 0.85em;
+    padding: 10px 11px;
+  }
+}
+
+span.onsale {
+  display: none;
+}
+
+div.woo-excerpt-wrap {
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  line-height: 17px;
+  text-align: justify;
+  margin-bottom: 0.5rem;
+}
+@media only screen and (max-width: 425px) {
+  div.woo-excerpt-wrap {
+    font-size: 1em;
+  }
+}
+@media only screen and (max-width: 768px) {
+  div.woo-excerpt-wrap {
+    font-size: 0.9em;
+  }
+}
+
+div.woo-after-thumbnail-wrapper {
+  margin-bottom: 50px;
+}
+
+nav.woocommerce-pagination {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+article.page.type-page h1,
+article.post.type-post h1 {
   font-size: 3.12em;
   color: black;
 }
-article.page.type-page h2, article.post.type-post h2 {
+article.page.type-page h2,
+article.post.type-post h2 {
   font-size: 2.6em;
 }
-article.page.type-page h3, article.post.type-post h3 {
+article.page.type-page h3,
+article.post.type-post h3 {
   font-size: 2.16em;
 }
-article.page.type-page h4, article.post.type-post h4 {
+article.page.type-page h4,
+article.post.type-post h4 {
   font-size: 1.8em;
 }
-article.page.type-page h5, article.post.type-post h5 {
+article.page.type-page h5,
+article.post.type-post h5 {
   font-size: 1.5em;
 }
-article.page.type-page p, article.post.type-post p {
+article.page.type-page p,
+article.post.type-post p {
   font-size: 1.2em;
   color: black;
+}
+
+.hentry .entry-header .posted-on a,
+.hentry .entry-header .post-author a {
+  color: orange;
 }
 
 /*# sourceMappingURL=style.css.map */

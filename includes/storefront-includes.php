@@ -15,6 +15,10 @@ function remove_woocommerce_action_hooks(){
     remove_action("storefront_header", "storefront_product_search", 40);
 
     remove_action("storefront_header", "storefront_site_branding", 20);
+
+    remove_action( 'woocommerce_after_shop_loop', 'woocommerce_result_count',  20);
+
+    remove_action( 'woocommerce_after_shop_loop', 'woocommerce_catalog_ordering',  10);
 }
 
 add_action("after_setup_theme", "remove_woocommerce_action_hooks");

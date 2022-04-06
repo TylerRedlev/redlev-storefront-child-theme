@@ -1,11 +1,121 @@
 // Woocommerce header archive title removed
-.woocommerce-products-header{
-    display: none;
+.woocommerce-products-header {
+  display: none;
 }
 
-
+//sorting form floated to right
 .storefront-sorting {
-    form.woocommerce-ordering {
-        float: right;
+  form.woocommerce-ordering {
+    float: right;
+  }
+}
+
+//product heading increased in size and fon family changed to Oswald
+ul.products li.product {
+  position: relative;
+  margin-bottom: 7em;
+
+  @media only screen and (max-width: 425px) {
+    margin-bottom: 11em;
+  }
+
+  h2.woocommerce-loop-product__title {
+    font-size: 1.5em;
+    font-family: "Oswald", sans-serif;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 1.2em;
     }
+  }
+
+  img.attachment-woocommerce_thumbnail.size-woocommerce_thumbnail {
+    margin-bottom: 10px;
+
+    @media only screen and (max-width: 425px) {
+      width: 100%;
+    }
+
+  }
+
+  span.price {
+    font-size: 1.3em;
+    font-family: "Oswald", sans-serif;
+    position: absolute;
+    left: 0;
+    //color:#333333;
+
+    @media only screen and (max-width: 425px) {
+    }
+
+    @media only screen and (max-width: 768px) {
+      width: auto;
+      font-size: 1em;
+    }
+  }
+
+  a.button {
+    position: absolute;
+    right: 0;
+    background: linear-gradient(to bottom, #faab37 0, #f9a11e 100%);
+    color: white;
+    line-height: 1.1;
+    font-family: "Open Sans Condensed", sans-serif;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 10px 11px;
+    border-radius: 2px;
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+    font-size: 1em;
+    font-weight: bold;
+
+    @media only screen and (max-width: 425px) {
+      font-size: 0.7em;
+      
+      padding: 8px 9px;
+    }
+
+    @media only screen and (max-width: 768px) {
+      width: auto;
+      font-size: 0.85em;
+      padding: 10px 11px;
+    }
+  }
+}
+
+//Sale icon display removed
+span.onsale {
+  display: none;
+}
+
+//product short description added under images
+div.woo-excerpt-wrap {
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  //font-size: 1em;
+  line-height: 17px;
+  text-align: justify;
+  margin-bottom: 0.5rem;
+
+  
+
+  @media only screen and (max-width: 425px) {
+    font-size: 1em;
+  }
+
+
+  @media only screen and (max-width: 768px) {
+    font-size: 0.9em;
+  }
+
+}
+
+div.woo-after-thumbnail-wrapper {
+  margin-bottom: 50px;
+}
+
+//Woocommerce pagination style
+nav.woocommerce-pagination {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }

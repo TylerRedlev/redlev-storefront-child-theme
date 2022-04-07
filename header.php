@@ -101,6 +101,14 @@
             do_action('storefront_header');
             ?>
 
+            <div class="desktop-nav-stripe-container">
+                <div class="desktop-nav-stripe" style="background-color: #f86700"></div>
+                <div class="desktop-nav-stripe" style="background-color: #f99b00"></div>
+                <div class="desktop-nav-stripe" style="background-color: #00a4d8"></div>
+                <div class="desktop-nav-stripe" style="background-color: #007abf"></div>
+                <div class="desktop-nav-stripe" style="background-color: #034760"></div>
+            </div>
+
         </header><!-- #masthead -->
 
         <?php

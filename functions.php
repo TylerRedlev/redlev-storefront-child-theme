@@ -34,11 +34,11 @@ function redlev_storefront_wp_theme_nav_config(){
 
     //registering the nav menus
     register_nav_menus(array(
-        "sgg_wp_primary_menu_id" => "SGG Primary Menu (Top Menu)",
-        "sgg_wp_category_menu_id" => "SGG Category Chooser",
-        "sgg_wp_sidebar_menu_id" => "SGG Sidebar",
-        "sgg_wp_footer_menu_id" => "SGG Footer Menu",
-        "sgg_wp_aux_footer_menu_id" => "SGG Footer Auxiliary Menu"
+        "redlev_wp_primary_menu_id" => "Redlev Storefront Primary Menu (Top Menu)",
+        "redlev_wp_category_menu_id" => "Redlev Category Chooser",
+        "redlev_wp_sidebar_menu_id" => "Redlev Sidebar",
+        "redlev_wp_footer_menu_id" => "Redlev Footer Menu",
+        "redlev_wp_aux_footer_menu_id" => "Redlev Footer Auxiliary Menu"
     ));
 
     // add theme support for thumbnails

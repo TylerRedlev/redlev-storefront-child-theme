@@ -42,7 +42,4 @@ function add_primary_navigation_menu(){
     echo '</nav>';
 }
 
-add_action("after_setup_theme", "add_primary_navigation_menu");
-
-
 add_action( 'storefront_header', 'add_primary_navigation_menu',  50);

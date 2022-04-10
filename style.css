@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* 
 Theme Name: Redlev Storefront Child Theme
 Version: 1.0 
@@ -8,6 +9,11 @@ Template: storefront
 */
 /* --------------- Theme customization starts here ----------------- */
 /* FOOTER IMPORT */
+header#masthead {
+  padding-bottom: 0.75em;
+  margin-bottom: 0.75em;
+}
+
 header div#SearchBar {
   display: grid;
   width: 90%;
@@ -139,6 +145,102 @@ div.storefront-primary-navigation nav#site-navigation div.primary-navigation ul 
   justify-content: space-between;
 }
 
+.navbarDropdown {
+  display: none;
+  text-align: right;
+  background-color: #fff;
+  height: auto;
+}
+.navbarDropdown a {
+  height: auto;
+  color: #545454;
+}
+
+@media screen and (max-width: 425px) {
+  .navbarDropdown {
+    height: auto;
+    text-align: right;
+    display: block;
+  }
+  .navbarDropdown i {
+    margin-right: 7px;
+    margin-top: 7px;
+  }
+}
+header nav#site-navigation ul#redlevMainMenu {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin-bottom: 0;
+}
+@media screen and (max-width: 425px) {
+  header nav#site-navigation ul#redlevMainMenu {
+    height: auto;
+    overflow: hidden;
+    display: none;
+  }
+}
+header nav#site-navigation ul#redlevMainMenu li {
+  flex-grow: 1;
+  position: relative;
+  text-align: center;
+}
+@media screen and (max-width: 425px) {
+  header nav#site-navigation ul#redlevMainMenu li {
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    text-align: left;
+  }
+}
+header nav#site-navigation ul#redlevMainMenu li a {
+  color: #545454;
+  text-transform: uppercase;
+  font-family: "Helvetica", "Arial", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+@media screen and (max-width: 425px) {
+  header nav#site-navigation ul#redlevMainMenu li a {
+    border-bottom: 1px solid #b8b8b8;
+  }
+}
+header nav#site-navigation ul#redlevMainMenu li a:not(:only-child):after,
+header nav#site-navigation ul#redlevMainMenu li a:visited:not(:only-child):after {
+  padding-left: 4px;
+  content: " ▾";
+}
+header nav#site-navigation ul#redlevMainMenu li ul {
+  display: none;
+  width: inherit;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: inherit;
+}
+@media screen and (max-width: 425px) {
+  header nav#site-navigation ul#redlevMainMenu li ul {
+    margin: 10px 0;
+    padding: 0px;
+    display: none;
+    position: static;
+  }
+}
+header nav#site-navigation ul#redlevMainMenu li ul a {
+  border-bottom: 1px solid gainsboro;
+}
+header nav#site-navigation ul#redlevMainMenu li:hover > ul {
+  display: block;
+  cursor: pointer;
+  height: auto;
+}
 /*-------------NAV STRIPE CONTAINER/*-------------*/
 header > .desktop-nav-stripe-container {
   width: 100%;
@@ -154,6 +256,46 @@ header > .desktop-nav-stripe-container .desktop-nav-stripe {
 }
 
 /*-------------NAV STRIPE CONTAINER/*-------------*/
+nav.quick-category-chooser ul#redlevCategoryMenu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  list-style-type: none;
+  margin: 0;
+}
+nav.quick-category-chooser ul#redlevCategoryMenu li {
+  display: inline;
+  margin-top: 0.5em;
+  letter-spacing: 1px;
+  margin-right: 1em;
+}
+nav.quick-category-chooser ul#redlevCategoryMenu li :hover {
+  color: orange;
+}
+nav.quick-category-chooser ul#redlevCategoryMenu li a {
+  color: white;
+  background-color: #007abf;
+  border-radius: 5px;
+  padding: 0.5em 0.8em;
+  line-height: 1.6em;
+  font-family: "Oswald", "Arial", sans-serif;
+}
+@media screen and (min-width: 768px) {
+  nav.quick-category-chooser ul#redlevCategoryMenu li a {
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 768px) {
+  nav.quick-category-chooser ul#redlevCategoryMenu li a {
+    font-size: 0.75em;
+  }
+}
+@media screen and (max-width: 425px) {
+  nav.quick-category-chooser ul#redlevCategoryMenu li a {
+    font-size: 0.8em;
+  }
+}
+
 footer {
   padding-top: 2rem;
 }

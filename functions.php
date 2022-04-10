@@ -60,7 +60,7 @@ add_action("after_setup_theme", "redlev_storefront_wp_theme_nav_config");
 // adding classes to li 
 
 function redlev_storefront_wp_theme_add_li_class($classes, $item, $args){
-    $classes[] = "nav-item sgg-li-class";
+    $classes[] = "nav-item redlev-li-class";
     return $classes;
 
 }
@@ -70,7 +70,7 @@ add_filter("nav_menu_css_class", "redlev_storefront_wp_theme_add_li_class", 1, 3
 // adding classes to anchor links
 
 function redlev_storefront_wp_theme_add_anchor_links($classes, $item, $args){
-    $classes["class"] = "nav-link sgg-link-class";
+    $classes["class"] = "nav-link redlev-link-class";
     return $classes;
 }
 

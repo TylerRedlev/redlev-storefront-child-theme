@@ -29,6 +29,8 @@ add_action("after_setup_theme", "remove_woocommerce_action_hooks");
 
 function add_primary_navigation_menu(){
     echo '<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="Primary Navigation">';
+    echo '<div class="navbarDropdown" id="dropdownContainer"><a href="#menu" id="hamburger"><i
+    class="fa fa-bars fa-2x"></i></a></div>';
     
     wp_nav_menu(array(
         "theme_location" => "redlev_wp_primary_menu_id",

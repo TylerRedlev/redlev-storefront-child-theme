@@ -1,3 +1,8 @@
+header#masthead {
+  padding-bottom: 0.75em;
+  margin-bottom: 0.75em;
+}
+
 // ====================
 // SEARCHBAR SECTION
 // ====================
@@ -31,7 +36,7 @@ header div#SearchBar {
       display: flex;
       justify-content: center;
       margin: 10px 0;
-      
+
       @media only screen and (max-width: 425px) {
         width: 100%;
       }
@@ -149,7 +154,126 @@ div.storefront-primary-navigation nav#site-navigation {
   ul.sub-menu li {
   }
 }
+// ====================
+// NAVBAR SECTION
+// ====================
 
+.navbarDropdown {
+  display: none;
+  text-align: right;
+  background-color: #fff;
+  height: auto;
+
+  a {
+    height: auto;
+    color: #545454;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .navbarDropdown {
+    //top: 0px;
+    //background-color: #fff;
+    height: auto;
+    text-align: right;
+    display: block;
+
+    i {
+      margin-right: 7px;
+      margin-top: 7px;
+    }
+  }
+}
+
+header nav#site-navigation ul#redlevMainMenu {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin-bottom: 0;
+
+  @media screen and (max-width: 425px) {
+    height: auto;
+    overflow: hidden;
+    display: none;
+  }
+
+  li {
+    flex-grow: 1;
+    position: relative;
+    text-align: center;
+
+    @media screen and (max-width: 425px) {
+      margin: 0px;
+      padding: 0px;
+      display: block;
+      text-align: left;
+    }
+
+    a {
+      color: #545454;
+      text-transform: uppercase;
+      font-family: "Helvetica", "Arial", sans-serif;
+      font-weight: 700;
+      letter-spacing: 1px;
+
+      @media screen and (max-width: 425px) {
+        border-bottom: 1px solid rgb(184, 184, 184);
+      }
+    }
+
+    //Places an arrow for the elements who have sub items under them(like a dropdown menu)
+    a:not(:only-child):after,
+    a:visited:not(:only-child):after {
+      padding-left: 4px;
+      content: " ▾";
+    }
+
+    //sub-menu stylings
+    ul {
+      //Submenus won't appear unless you hover on the parent li
+      display: none;
+      width: inherit;
+      margin: 0;
+      padding: 0;
+      box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+      background-color: white;
+
+      //Positioning of the unordered list
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      width: inherit;
+
+      @media screen and (max-width: 425px) {
+        margin: 10px 0;
+        padding: 0px;
+        display: none;
+        position: static;
+      }
+
+      // transition: height 2s;
+
+      // height: 0;
+      a {
+        border-bottom: 1px solid rgb(220, 220, 220);
+      }
+    }
+
+    //Submenus will appear on hover on desktop mode
+    &:hover > ul {
+      display: block;
+      cursor: pointer;
+      height: auto;
+
+      a {
+        //color: green;
+      }
+    }
+  }
+}
 
 /*-------------NAV STRIPE CONTAINER/*-------------*/
 
@@ -168,3 +292,48 @@ header > .desktop-nav-stripe-container {
 }
 
 /*-------------NAV STRIPE CONTAINER/*-------------*/
+
+// =====================================
+// QUICK CATEGORY CHOOSER
+// =====================================
+
+nav.quick-category-chooser ul#redlevCategoryMenu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  list-style-type: none;
+  margin: 0;
+  li {
+    display: inline;
+    margin-top: 0.5em;
+    letter-spacing: 1px;
+    margin-right: 1em;
+
+    :hover {
+      color: orange;
+    }
+    
+    a {
+      color: white;
+      background-color: #007abf;
+      border-radius: 5px;
+
+      
+      padding: 0.5em 0.8em;
+      line-height: 1.6em;
+      font-family: "Oswald", "Arial", sans-serif;
+
+      @media screen and (min-width: 768px) {
+        font-size: 0.8em;
+      }
+
+      @media screen and (max-width: 768px) {
+        font-size: 0.75em;
+      }
+
+      @media screen and (max-width: 425px) {
+        font-size: 0.8em;
+      }
+    }
+  }
+}

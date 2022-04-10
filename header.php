@@ -111,6 +111,23 @@
 
         </header><!-- #masthead -->
 
+        <!--Quick Category Menu -->
+        <div class="col-full">
+            <nav class="quick-category-chooser">
+
+                <?php
+                wp_nav_menu(array(
+                    "theme_location" => "redlev_wp_category_menu_id",
+                    'container'         => 'ul',
+                    "menu_id" => 'redlevCategoryMenu',
+                    "menu_class" => ''
+                ));
+                ?>
+
+            </nav>
+
+        </div>
+
         <?php
         /**
          * Functions hooked in to storefront_before_content

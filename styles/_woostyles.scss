@@ -120,4 +120,29 @@ nav.woocommerce-pagination {
   width: 100%;
 }
 
+div.summary.entry-summary form.cart {
+
+  display: flex;
+  justify-content: center;
+
+
+
+  button {
+    background: linear-gradient(to bottom, #faab37 0, #f9a11e 100%);
+    font-size: 160%;
+
+    @media only screen and (max-width: 768px) {
+      font-size: 150%;
+    }
+
+  
+    @media only screen and (max-width: 425px) {
+      font-size: 125%;
+    }
+  
+  
+    
+  }
+}
+
 

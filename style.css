@@ -150,6 +150,7 @@ div.storefront-primary-navigation nav#site-navigation div.primary-navigation ul 
   text-align: right;
   background-color: #fff;
   height: auto;
+  margin-bottom: 5px;
 }
 .navbarDropdown a {
   height: auto;
@@ -582,6 +583,25 @@ nav.woocommerce-pagination {
   display: flex;
   justify-content: center;
   width: 100%;
+}
+
+div.summary.entry-summary form.cart {
+  display: flex;
+  justify-content: center;
+}
+div.summary.entry-summary form.cart button {
+  background: linear-gradient(to bottom, #faab37 0, #f9a11e 100%);
+  font-size: 160%;
+}
+@media only screen and (max-width: 768px) {
+  div.summary.entry-summary form.cart button {
+    font-size: 150%;
+  }
+}
+@media only screen and (max-width: 425px) {
+  div.summary.entry-summary form.cart button {
+    font-size: 125%;
+  }
 }
 
 article.page.type-page h1,

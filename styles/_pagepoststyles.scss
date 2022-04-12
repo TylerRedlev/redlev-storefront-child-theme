@@ -1,28 +1,40 @@
 article.page.type-page,
 article.post.type-post {
   h1 {
-    font-size: 3.12em;
+    @media only screen and (min-width: 768px) {
+      font-size: 3.12em;
+    }
     color: black;
   }
 
   h2 {
-    font-size: 2.6em;
+    @media only screen and (min-width: 768px) {
+      font-size: 2.6em;
+    }
   }
 
   h3 {
-    font-size: 2.16em;
+    @media only screen and (min-width: 768px) {
+      font-size: 2.16em;
+    }
   }
 
   h4 {
-    font-size: 1.8em;
+    @media only screen and (min-width: 768px) {
+      font-size: 1.8em;
+    }
   }
 
   h5 {
-    font-size: 1.5em;
+    @media only screen and (min-width: 768px) {
+      font-size: 1.5em;
+    }
   }
 
   p {
-    font-size: 1.2em;
+    @media only screen and (min-width: 768px) {
+      font-size: 1.2em;
+    }
     color: black;
   }
 }
@@ -38,12 +50,101 @@ aside.entry-taxonomy a {
 
 section.comments-area {
   form {
-      p.logged-in-as a{
-           color: orange;
-      }
+    p.logged-in-as a {
+      color: orange;
+    }
     input.submit {
       background-color: #65bf21;
       color: white;
     }
+  }
+}
+
+// ==========================
+//   BLOG STYLINGS
+// ==========================
+
+main.site-blog-main {
+  .blog-page-categories-title {
+    text-align: center;
+  }
+}
+
+.storefront-breadcrumb {
+  margin: 15px 0 10px;
+
+  .woocommerce-breadcrumb {
+    //font-size: 1.2em;
+  }
+}
+
+// Blog page categories menu
+ul#blog-page-category-menu {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  justify-content: center;
+  margin-bottom: 1em;
+  li {
+    display: inline;
+    margin: 0px 5px 5px 0px;
+    padding: 5px;
+    background-color: #65bf21;
+
+    a {
+      color: white;
+      font-size: 1em;
+    }
+  }
+}
+
+article.blog-page-article-container {
+  height: auto;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+
+  div.blog-page-thumbnail-container {
+    //height: 100%;
+    display: inline-block;
+    //float: left;
+
+    a {
+
+      height: 100%;
+
+      img {
+        max-height: 12em;
+        width: auto;
+        display: inline;
+      }
+    }
+  }
+
+  div.blog-page-short-content-container {
+    width: 50%;
+    height: auto;
+    float: right;
+    margin-left: 30px;
+    //display: inline-block;
+    //display: inline-block;
+
+    .blog-page-entry-header {
+      margin-bottom: 20px;
+    }
+    a {
+      color: orange;
+      font-weight: bold;
+    }
+  }
+
+}
+
+span.blog-page-post-author {
+  img {
+    display: inline;
+    margin: 0 5px;
   }
 }

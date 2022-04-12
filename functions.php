@@ -38,7 +38,9 @@ function redlev_storefront_wp_theme_nav_config(){
         "redlev_wp_category_menu_id" => "Redlev Category Chooser",
         "redlev_wp_sidebar_menu_id" => "Redlev Sidebar",
         "redlev_wp_footer_menu_id" => "Redlev Footer Menu",
-        "redlev_wp_aux_footer_menu_id" => "Redlev Footer Auxiliary Menu"
+        "redlev_wp_aux_footer_menu_id" => "Redlev Footer Auxiliary Menu",
+        "redlev_wp_blog_page_category_menu_id" => "Redlev Blog Page Category Menu",
+        "redlev_wp_blog_page_tags_menu_id" => "Redlev Blog Page Tags Menu"
     ));
 
     // add theme support for thumbnails

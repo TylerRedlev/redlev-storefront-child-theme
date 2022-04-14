@@ -673,7 +673,7 @@ main.site-blog-main .blog-page-categories-title {
 .storefront-breadcrumb {
   margin: 15px 0 10px;
 }
-ul#blog-page-category-menu {
+ul#blog-page-category-menu, ul#blog-page-tags-menu {
   list-style-type: none;
   display: flex;
   flex-wrap: wrap;
@@ -681,15 +681,20 @@ ul#blog-page-category-menu {
   justify-content: center;
   margin-bottom: 1em;
 }
-ul#blog-page-category-menu li {
+ul#blog-page-category-menu li, ul#blog-page-tags-menu li {
   display: inline;
   margin: 0px 5px 5px 0px;
   padding: 5px;
   background-color: #65bf21;
 }
-ul#blog-page-category-menu li a {
+ul#blog-page-category-menu li a, ul#blog-page-tags-menu li a {
   color: white;
   font-size: 1em;
+  font-weight: bold;
+}
+
+ul#blog-page-tags-menu li {
+  background-color: #ff1616;
 }
 
 article.blog-page-article-container {
@@ -699,25 +704,56 @@ article.blog-page-article-container {
   flex-direction: row;
   justify-content: start;
 }
+@media only screen and (max-width: 425px) {
+  article.blog-page-article-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 article.blog-page-article-container div.blog-page-thumbnail-container {
+  height: auto;
   display: inline-block;
+}
+@media only screen and (min-width: 426px) {
+  article.blog-page-article-container div.blog-page-thumbnail-container {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 425px) {
+  article.blog-page-article-container div.blog-page-thumbnail-container {
+    width: 100%;
+  }
 }
 article.blog-page-article-container div.blog-page-thumbnail-container a {
   height: 100%;
 }
 article.blog-page-article-container div.blog-page-thumbnail-container a img {
-  max-height: 12em;
+  max-height: 100%;
   width: auto;
   display: inline;
 }
 article.blog-page-article-container div.blog-page-short-content-container {
-  width: 50%;
   height: auto;
-  float: right;
-  margin-left: 30px;
+}
+@media only screen and (min-width: 426px) {
+  article.blog-page-article-container div.blog-page-short-content-container {
+    margin-left: 30px;
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 425px) {
+  article.blog-page-article-container div.blog-page-short-content-container {
+    width: 100%;
+    padding: 0px 5px;
+  }
 }
 article.blog-page-article-container div.blog-page-short-content-container .blog-page-entry-header {
   margin-bottom: 20px;
+}
+article.blog-page-article-container div.blog-page-short-content-container .blog-page-entry-header h3 {
+  font-family: "Oswald", "Arial", sans-serif;
+  color: #3d3d3d;
 }
 article.blog-page-article-container div.blog-page-short-content-container a {
   color: orange;

@@ -42,6 +42,7 @@ get_header(); ?>
                 <h2>LATEST 7 POSTS</h2>
             </div>
 
+            <!-- Latest posts articles -->
             <?php
             $recent_posts = wp_get_recent_posts(array(
                 'numberposts' => 7, // Number of recent posts thumbnails to display
@@ -77,14 +78,15 @@ get_header(); ?>
                                 </a>
                             </span>
 
-                        </header> 
-                        
+                        </header>
+
 
 
                         <div class="blog-page-entry-content">
 
-                            <?php echo mb_strimwidth(get_the_excerpt($post_item['ID']), 0, 120, '...');
-                            //get_the_excerpt($post_item['ID']);  ?></h4>
+                            <?php echo mb_strimwidth(get_the_excerpt($post_item['ID']), 0, 220, '...');
+                            //get_the_excerpt($post_item['ID']);  
+                            ?></h4>
 
                             <?php  //echo mb_strimwidth($post_item['post_content'], 0, 250, '...')
                             ?>
@@ -99,9 +101,24 @@ get_header(); ?>
 
             <?php endforeach; ?>
 
-            <p>This is the blog page</p>
 
+            <!-- Top articles headline -->
+            <div class="headline">
+                <h2>TOP ARTICLES</h2>
+            </div>
 
+            <h2 class="blog-page-tags-title">&#127873; Tags &#127873;</h2>
+
+            <!-- Tags menu -->
+            <?php
+            wp_nav_menu(array(
+                "theme_location" => "redlev_wp_blog_page_tags_menu_id",
+                'container'         => 'ul',
+                "menu_id" => 'blog-page-tags-menu',
+                "menu_class" => ''
+            ));
+            ?>
+            <!-- Tags menu end-->
 
         <?php
 

@@ -109,14 +109,18 @@ header div#SearchBar {
       display: flex;
       order: 3;
       justify-content: center;
+      margin-top: 5px;
     }
 
-    a.btn {
+    a.btn,
+    a {
       padding: 3px 6px;
       width: 30%;
       border-radius: 5px;
       text-align: center;
       align-self: center;
+      color: brown;
+      font-weight: bold;
 
       @media only screen and (max-width: 425px) {
         font-size: 0.8em;
@@ -186,91 +190,104 @@ div.storefront-primary-navigation nav#site-navigation {
   }
 }
 
-header nav#site-navigation ul#redlevMainMenu {
-  display: flex;
-  justify-content: space-between;
-  list-style-type: none;
-  margin-bottom: 0;
+header nav#site-navigation {
+  width: 100%;
 
-  @media screen and (max-width: 425px) {
-    height: auto;
-    overflow: hidden;
-    display: none;
-  }
-
-  li {
-    flex-grow: 1;
-    position: relative;
-    text-align: center;
+  ul#redlevMainMenu {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin-bottom: 0;
 
     @media screen and (max-width: 425px) {
-      margin: 0px;
-      padding: 0px;
-      display: block;
-      text-align: left;
-    }
-
-    a {
-      color: #545454;
-      text-transform: uppercase;
-      font-family: "Helvetica", "Arial", sans-serif;
-      font-weight: 700;
-      letter-spacing: 1px;
-
-      @media screen and (max-width: 425px) {
-        border-bottom: 1px solid rgb(184, 184, 184);
-      }
-    }
-
-    //Places an arrow for the elements who have sub items under them(like a dropdown menu)
-    a:not(:only-child):after,
-    a:visited:not(:only-child):after {
-      padding-left: 4px;
-      content: " ▾";
-    }
-
-    //sub-menu stylings
-    ul {
-      //Submenus won't appear unless you hover on the parent li
-      display: none;
-      width: inherit;
-      margin: 0;
-      padding: 0;
-      box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
-      background-color: white;
-
-      //Positioning of the unordered list
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      margin-left: auto;
-      margin-right: auto;
-      width: inherit;
-
-      @media screen and (max-width: 425px) {
-        margin: 10px 0;
-        padding: 0px;
-        display: none;
-        position: static;
-      }
-
-      // transition: height 2s;
-
-      // height: 0;
-      a {
-        border-bottom: 1px solid rgb(220, 220, 220);
-      }
-    }
-
-    //Submenus will appear on hover on desktop mode
-    &:hover > ul {
-      display: block;
-      cursor: pointer;
       height: auto;
+      overflow: hidden;
+      display: none;
+    }
+
+    li {
+      flex-grow: 1;
+      position: relative;
+      text-align: center;
+
+      @media screen and (max-width: 425px) {
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        text-align: left;
+      }
 
       a {
-        //color: green;
+        color: #545454;
+        text-transform: uppercase;
+        font-family: "Open Sans", "Arial", sans-serif;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-size: 1em;
+
+        @media screen and (max-width: 768px) {
+          //font-size: 1.1em;
+        }
+
+        @media screen and (max-width: 425px) {
+          border-bottom: 1px solid rgb(184, 184, 184);
+          font-size: 1em;
+        }
+      }
+
+      //Places an arrow for the elements who have sub items under them(like a dropdown menu)
+      a:not(:only-child):after,
+      a:visited:not(:only-child):after {
+        padding-left: 4px;
+        content: " ▾";
+      }
+
+      //sub-menu stylings
+      ul.sub-menu {
+        //Submenus won't appear unless you hover on the parent li
+        display: none;
+        width: inherit;
+        margin: 0;
+        padding: 0;
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.2);
+        background-color: white;
+
+        //Positioning of the unordered list
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: inherit;
+
+        @media screen and (max-width: 425px) {
+          margin: 10px 0;
+          padding: 0px;
+          display: none;
+          position: static;
+        }
+
+        li {
+          display: block;
+          border-bottom: grey;
+
+          &:first-child {
+            border-bottom: none;
+          }
+
+          a {
+            text-align: left;
+            border-bottom: 1px solid rgb(220, 220, 220);
+          }
+        }
+      }
+
+      //Submenus will appear on hover on desktop mode
+      &:hover > ul.sub-menu {
+        display: block;
+        cursor: pointer;
+        height: auto;
       }
     }
   }
@@ -313,13 +330,12 @@ nav.quick-category-chooser ul#redlevCategoryMenu {
     :hover {
       color: orange;
     }
-    
+
     a {
       color: white;
       background-color: #007abf;
       border-radius: 5px;
 
-      
       padding: 0.5em 0.8em;
       line-height: 1.6em;
       font-family: "Oswald", "Arial", sans-serif;

@@ -105,29 +105,36 @@ header div#SearchBar div#loginBar {
     display: flex;
     order: 3;
     justify-content: center;
+    margin-top: 5px;
   }
 }
-header div#SearchBar div#loginBar a.btn {
+header div#SearchBar div#loginBar a.btn,
+header div#SearchBar div#loginBar a {
   padding: 3px 6px;
   width: 30%;
   border-radius: 5px;
   text-align: center;
   align-self: center;
+  color: brown;
+  font-weight: bold;
 }
 @media only screen and (max-width: 425px) {
-  header div#SearchBar div#loginBar a.btn {
+  header div#SearchBar div#loginBar a.btn,
+header div#SearchBar div#loginBar a {
     font-size: 0.8em;
     width: 45%;
   }
 }
 @media only screen and (min-width: 425px) {
-  header div#SearchBar div#loginBar a.btn {
+  header div#SearchBar div#loginBar a.btn,
+header div#SearchBar div#loginBar a {
     width: 30%;
     font-size: 0.7em;
   }
 }
 @media only screen and (min-width: 768px) {
-  header div#SearchBar div#loginBar a.btn {
+  header div#SearchBar div#loginBar a.btn,
+header div#SearchBar div#loginBar a {
     width: auto;
     font-size: 0.9em;
   }
@@ -168,6 +175,9 @@ div.storefront-primary-navigation nav#site-navigation div.primary-navigation ul 
     margin-top: 7px;
   }
 }
+header nav#site-navigation {
+  width: 100%;
+}
 header nav#site-navigation ul#redlevMainMenu {
   display: flex;
   justify-content: space-between;
@@ -197,13 +207,15 @@ header nav#site-navigation ul#redlevMainMenu li {
 header nav#site-navigation ul#redlevMainMenu li a {
   color: #545454;
   text-transform: uppercase;
-  font-family: "Helvetica", "Arial", sans-serif;
+  font-family: "Open Sans", "Arial", sans-serif;
   font-weight: 700;
   letter-spacing: 1px;
+  font-size: 1em;
 }
 @media screen and (max-width: 425px) {
   header nav#site-navigation ul#redlevMainMenu li a {
     border-bottom: 1px solid #b8b8b8;
+    font-size: 1em;
   }
 }
 header nav#site-navigation ul#redlevMainMenu li a:not(:only-child):after,
@@ -211,7 +223,7 @@ header nav#site-navigation ul#redlevMainMenu li a:visited:not(:only-child):after
   padding-left: 4px;
   content: " ▾";
 }
-header nav#site-navigation ul#redlevMainMenu li ul {
+header nav#site-navigation ul#redlevMainMenu li ul.sub-menu {
   display: none;
   width: inherit;
   margin: 0;
@@ -227,21 +239,30 @@ header nav#site-navigation ul#redlevMainMenu li ul {
   width: inherit;
 }
 @media screen and (max-width: 425px) {
-  header nav#site-navigation ul#redlevMainMenu li ul {
+  header nav#site-navigation ul#redlevMainMenu li ul.sub-menu {
     margin: 10px 0;
     padding: 0px;
     display: none;
     position: static;
   }
 }
-header nav#site-navigation ul#redlevMainMenu li ul a {
+header nav#site-navigation ul#redlevMainMenu li ul.sub-menu li {
+  display: block;
+  border-bottom: grey;
+}
+header nav#site-navigation ul#redlevMainMenu li ul.sub-menu li:first-child {
+  border-bottom: none;
+}
+header nav#site-navigation ul#redlevMainMenu li ul.sub-menu li a {
+  text-align: left;
   border-bottom: 1px solid gainsboro;
 }
-header nav#site-navigation ul#redlevMainMenu li:hover > ul {
+header nav#site-navigation ul#redlevMainMenu li:hover > ul.sub-menu {
   display: block;
   cursor: pointer;
   height: auto;
 }
+
 /*-------------NAV STRIPE CONTAINER/*-------------*/
 header > .desktop-nav-stripe-container {
   width: 100%;

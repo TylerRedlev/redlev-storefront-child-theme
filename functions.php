@@ -12,6 +12,10 @@ function redlev_storefront_theme_load_scripts(){
 
     wp_enqueue_style("style",  get_stylesheet_uri(), array(), "1.0", "all");
 
+    //wp_enqueue_script("bootstrap", get_template_directory_uri()."/js/bootstrap.bundle.min.js", array("jquery"), "1.0", true);
+
+    wp_enqueue_script( 'custom', get_stylesheet_directory_uri() . '/js/menuDropdown.js', array(), '1.0.0', true );
+
     // fonts
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Open+Sans&family=Oswald:wght@400;700&display=swap', false);
     wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap', false);

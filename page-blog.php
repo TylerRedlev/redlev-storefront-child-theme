@@ -63,7 +63,13 @@ get_header(); ?>
                     <div class="blog-page-short-content-container">
 
                         <header class="blog-page-entry-header">
-                            <h3 class="blog-page-post-title"><?php echo $post_item['post_title']; ?></h3>
+
+                            <a href="<?php echo get_permalink($post_item['ID']) ?>">
+                                <h3 class="blog-page-post-title">
+                                    <?php echo $post_item['post_title']; ?>
+                                </h3>
+
+                            </a>
                             <span class="posted-on">Posted on
                                 <a href="<?php echo get_permalink($post_item['ID']) ?>" rel="bookmark">
                                     <time datetime="<?php echo get_the_date('c', $post_item['ID']); ?>" itemprop="datePublished">
@@ -95,6 +101,47 @@ get_header(); ?>
                             <a href="<?php echo get_permalink($post_item['ID']); ?>">...Read More!</a>
 
                         </div>
+
+                        <aside class="entry-taxonomy">
+                            <div class="cat-links">
+
+                                <p>Categories:
+                                    <?php $post_categories = wp_get_post_categories($post_item['ID']);
+                                    foreach ($post_categories as $category) :
+
+                                    ?>
+                                        <a href="<?php echo get_category_link($category); ?>"> <?php echo get_cat_name($category); ?> </a>
+                                    <?php
+                                        if ($category == end($post_categories)) {
+                                            echo ' ';
+                                        } else {
+                                            echo ',';
+                                        }
+
+                                    endforeach; ?>
+                                </p>
+
+                            </div>
+
+                            <div class="tags-links">
+                                <p>Tags:
+                                    <?php $post_tags = wp_get_post_tags($post_item['ID']);
+                                    foreach ($post_tags as $tag) :
+                                    ?>
+                                        <a href=""> <?php echo $tag->name; ?> </a>
+
+                                    <?php
+                                        if ($tag == end($post_tags)) {
+                                            echo '';
+                                        } else {
+                                            echo ',';
+                                        }
+
+                                    endforeach; ?>
+                                </p>
+                            </div>
+                        </aside>
+
 
                     </div>
 
@@ -130,8 +177,8 @@ get_header(); ?>
         $args = array(
             'post_type'              => array('post'), // use any for any kind of post type, custom post type slug for custom post type
             'post_status'            => array('publish'), // Also support: pending, draft, auto-draft, future, private, inherit, trash, any
-            'posts_per_page'         => '7',// use -1 for all posts
-            'cat'                    => get_cat_ID('Top Article') 
+            'posts_per_page'         => '7', // use -1 for all posts
+            'cat'                    => get_cat_ID('Top Article')
         );
 
         // The Query
@@ -139,54 +186,98 @@ get_header(); ?>
         $posts = $query->posts;
         foreach ($posts as $post) :
         ?>
-                    <article class="blog-page-article-container">
+            <article class="blog-page-article-container">
 
-                        <div class="blog-page-thumbnail-container">
-                            <a href="<?php echo get_permalink() ?>">
-                                <?php echo get_the_post_thumbnail(); ?>
+                <div class="blog-page-thumbnail-container">
+                    <a href="<?php echo get_permalink() ?>">
+                        <?php echo get_the_post_thumbnail(); ?>
+
+                    </a>
+                </div>
+
+                <div class="blog-page-short-content-container">
+
+                    <header class="blog-page-entry-header">
+
+                        <a href="<?php echo get_permalink() ?>">
+                            <h3 class="blog-page-post-title">
+                                <?php echo the_title(); ?></h3>
+                        </a>
+                        <span class="posted-on">Posted on
+                            <a href="<?php echo get_permalink(); ?>" rel="bookmark">
+                                <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished">
+                                    <?php echo get_the_date('dS M Y'); ?></time>
+                            </a>
+                        </span>
+
+                        <span class="blog-page-post-author">by
+                            <a href="http://template-wp.local/author/themedemos/" rel="author">
+                                <?php echo get_avatar(get_the_author_meta(), 20); ?>
+                                <?php echo get_the_author();   ?>
 
                             </a>
-                        </div>
+                        </span>
 
-                        <div class="blog-page-short-content-container">
-
-                            <header class="blog-page-entry-header">
-                                <h3 class="blog-page-post-title"><?php echo the_title(); ?></h3>
-                                <span class="posted-on">Posted on
-                                    <a href="<?php echo get_permalink(); ?>" rel="bookmark">
-                                        <time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished">
-                                            <?php echo get_the_date('dS M Y'); ?></time>
-                                    </a>
-                                </span>
-
-                                <span class="blog-page-post-author">by
-                                    <a href="http://template-wp.local/author/themedemos/" rel="author">
-                                        <?php echo get_avatar(get_the_author_meta(), 20); ?>
-                                        <?php echo get_the_author();   ?>
-
-                                    </a>
-                                </span>
-
-                            </header>
+                    </header>
 
 
 
-                            <div class="blog-page-entry-content">
+                    <div class="blog-page-entry-content">
 
-                                <?php echo mb_strimwidth(get_the_excerpt(), 0, 220, '...');
-                                //get_the_excerpt($post_item['ID']);  
-                                ?></h4>
+                        <?php echo mb_strimwidth(get_the_excerpt(), 0, 220, '...');
+                        //get_the_excerpt($post_item['ID']);  
+                        ?></h4>
 
-                                <?php  //echo mb_strimwidth($post_item['post_content'], 0, 250, '...')
+                        <?php  //echo mb_strimwidth($post_item['post_content'], 0, 250, '...')
+                        ?>
+
+                        <a href="<?php echo get_permalink(); ?>">...Read More!</a>
+
+                    </div>
+
+                    <aside class="entry-taxonomy">
+                        <div class="cat-links">
+
+                            <p>Categories:
+                                <?php $post_categories = wp_get_post_categories($post_item['ID']);
+                                foreach ($post_categories as $category) :
+
                                 ?>
+                                    <a href=""> <?php echo get_cat_name($category); ?> </a>
+                                <?php
+                                    if ($category == end($post_categories)) {
+                                        echo ' ';
+                                    } else {
+                                        echo ',';
+                                    }
 
-                                <a href="<?php echo get_permalink(); ?>">...Read More!</a>
-
-                            </div>
+                                endforeach; ?>
+                            </p>
 
                         </div>
 
-                    </article>
+                        <div class="tags-links">
+                            <p>Tags:
+                                <?php $post_tags = get_the_tags($post_item['ID']);
+                                foreach ($post_tags as $tag) :
+                                ?>
+                                    <a href=""> <?php echo $tag->name; ?> </a>
+
+                                <?php
+                                    if ($tag == end($post_tags)) {
+                                        echo '';
+                                    } else {
+                                        echo ',';
+                                    }
+
+                                endforeach; ?>
+                            </p>
+                        </div>
+                    </aside>
+
+                </div>
+
+            </article>
 
 
 
@@ -196,14 +287,14 @@ get_header(); ?>
 
 
 
-                    /**
-                     * Functions hooked in to storefront_page_after action
-                     *
-                     * @hooked storefront_display_comments - 10
-                     */
-                    do_action('storefront_page_after');
+            /**
+             * Functions hooked in to storefront_page_after action
+             *
+             * @hooked storefront_display_comments - 10
+             */
+            do_action('storefront_page_after');
 
-                endforeach;
+        endforeach;
 
         // Restore original Post Data
         wp_reset_postdata();

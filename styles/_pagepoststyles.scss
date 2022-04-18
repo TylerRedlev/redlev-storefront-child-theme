@@ -65,12 +65,12 @@ section.comments-area {
 // ==========================
 
 main.site-blog-main {
-  .blog-page-categories-title, .blog-page-tags-title {
+  .blog-page-categories-title,
+  .blog-page-tags-title {
     text-align: center;
   }
 
   .blog-page-tags-title {
-    
     margin-top: 2em;
   }
 
@@ -166,7 +166,6 @@ article.blog-page-article-container {
           object-fit: contain;
         }
       }
-      
     }
   }
 
@@ -199,6 +198,22 @@ article.blog-page-article-container {
     a {
       color: orange;
       font-weight: bold;
+    }
+
+    div.blog-page-entry-content {
+      padding-bottom: 10px;
+    }
+
+    aside.entry-taxonomy {
+      padding-top: 10px;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+
+      div.cat-links,
+      div.tags-links {
+        p {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 }

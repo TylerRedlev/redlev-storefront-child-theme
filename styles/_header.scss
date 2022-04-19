@@ -254,7 +254,7 @@ header nav#site-navigation {
 
         //Positioning of the unordered list
         position: absolute;
-        top: 50%;
+        top: 75%;
         left: 0;
         right: 0;
         margin-left: auto;
@@ -278,6 +278,7 @@ header nav#site-navigation {
 
           a {
             text-align: left;
+            padding-left: 15px;
             border-bottom: 1px solid rgb(220, 220, 220);
           }
         }

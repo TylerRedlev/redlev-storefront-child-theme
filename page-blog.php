@@ -160,10 +160,9 @@ get_header(); ?>
         ?>
 
 
-        <?php
-
-
-        ?>
+        <button class="button-view-posts">
+            🖱️ CLICK HERE TO VIEW ALL RECENT POSTS ! 🖱️
+        </button>
 
 
         <!-- Top articles headline -->
@@ -300,6 +299,16 @@ get_header(); ?>
         wp_reset_postdata();
 
         ?>
+
+        <button class="button-view-posts">
+            <a href=" 
+            <?php echo get_category_link(get_cat_ID('Top Article')); ?>
+             ">
+                🖱️ ! CLICK HERE TO VIEW ALL TOP ARTICLES ! 🖱️
+            </a>
+        </button>
+
+
 
         <!-- Tags menu header -->
 
